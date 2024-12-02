@@ -1,8 +1,8 @@
-\Bot_Message Memorizer\Server
-\Bot_Message Memorizer\Base
-\Bot_Message Memorizer\settings.ini
-\Bot_Message Memorizer\my_account.session
-\Bot_Message Memorizer\Ex_json
+/Bot_Message Memorizer/Server
+/Bot_Message Memorizer/Base
+/Bot_Message Memorizer/settings.ini
+/Bot_Message Memorizer/my_account.session
+/Bot_Message Memorizer/Ex_json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
