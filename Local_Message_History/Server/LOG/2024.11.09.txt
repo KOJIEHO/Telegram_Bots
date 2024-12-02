@@ -1,0 +1,615 @@
+----------------------------------------------------------
+17:45:51.057	  1: 	Try run REST server...  [ Service: ham; Port: 4388; ThreadPool: 32 ]
+17:45:51.594	  1: 	Background REST server is running at http://localhost:4388
+17:45:51.595	  1: 	
+17:45:52.802	  1: 	Try connect to database... [ FB: 127.0.0.1:E:\Programme code\Python Projects\Bot_Message Memorizer\Base\TgBotMes_V1.fdb; User: SYSDBA; PoolMax: 50 ]
+17:45:53.350	  1: 	Database.Open Error: [FireDAC][Phys][IB]connection rejected by remote interface
+17:45:53.350	  1: 	There will be attempts to connect to the database every 10 sec.
+Check if the connection parameters are correct: E:\Programme code\Python Projects\Bot_Message Memorizer\Server\HameleonSrv.ini
+----------------------------------------------------------
+17:45:55.602	  1: 	Try run REST server...  [ Service: ham; Port: 4388; ThreadPool: 32 ]
+17:45:56.125	  1: 	Background REST server is running at http://localhost:4388
+17:45:56.125	  1: 	
+17:45:57.325	  1: 	Try connect to database... [ FB: 127.0.0.1:E:\Programme code\Python Projects\Bot_Message Memorizer\Base\TgBotMes_V1.fdb; User: SYSDBA; PoolMax: 50 ]
+17:45:57.861	  1: 	Connected successfully
+17:45:57.861	  1: 	
+17:45:57.913	  1: 	DB: >> Open [Command="select VER, HAM from PROG$VER where NAME = 'TGBOTMES'  "]
+17:45:57.913	  1: 	DB: << Open [Command="select VER, HAM from PROG$VER where NAME = 'TGBOTMES'  "]
+17:45:57.915	  1: 	DB: >> Fetch [ATable="PROG$VER", Command="select VER, HAM from PROG$VER where NAME = 'TGBOTMES'  "]
+17:45:57.917	  1: 	DB: << Fetch [ATable="PROG$VER", Command="select VER, HAM from PROG$VER where NAME = 'TGBOTMES'  ", RowsAffected=1]
+17:45:57.918	  1: 	DB:  . EOF reached [ATable="PROG$VER", Command="select VER, HAM from PROG$VER where NAME = 'TGBOTMES'  "]
+17:45:57.918	  1: 	DB: >> Close [Command="select VER, HAM from PROG$VER where NAME = 'TGBOTMES'  "]
+17:45:57.919	  1: 	DB: << Close [Command="select VER, HAM from PROG$VER where NAME = 'TGBOTMES'  "]
+17:45:57.920	  1: 	SystemPrefix: "TgBotMes"  CurModelVer: 0  
+17:45:58.150	  1: 	SQL:	SELECT * FROM TgBotMes_TYPE
+17:45:58.154	  1: 	DB: >> Open [Command="SELECT * FROM TgBotMes_TYPE "]
+17:45:58.154	  1: 	DB: << Open [Command="SELECT * FROM TgBotMes_TYPE "]
+17:45:58.154	  1: 	DB: >> Fetch [ATable="TgBotMes_TYPE", Command="SELECT * FROM TgBotMes_TYPE "]
+17:45:58.155	  1: 	DB: << Fetch [ATable="TgBotMes_TYPE", Command="SELECT * FROM TgBotMes_TYPE ", RowsAffected=7]
+17:45:58.155	  1: 	DB:  . EOF reached [ATable="TgBotMes_TYPE", Command="SELECT * FROM TgBotMes_TYPE "]
+17:45:58.155	  1: 	DB: >> Close [Command="SELECT * FROM TgBotMes_TYPE "]
+17:45:58.156	  1: 	DB: << Close [Command="SELECT * FROM TgBotMes_TYPE "]
+17:46:11.823	  2: 	>
+17:46:11.824	  2: 	GET  odata/Chat?
+17:46:11.824	  2: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:46:11.827	  2: 	SQL:	
+		SELECT Chat.ID, Chat.TYPE_ID
+		FROM Chat
+		ORDER BY 1
+17:46:11.832	  2: 	DB: >> Open [Command="SELECT Chat.ID, Chat.TYPE_ID FROM Chat ORDER BY 1 "]
+17:46:11.832	  2: 	DB: << Open [Command="SELECT Chat.ID, Chat.TYPE_ID FROM Chat ORDER BY 1 "]
+17:46:11.833	  2: 	DB: >> Fetch [ATable="Chat", Command="SELECT Chat.ID, Chat.TYPE_ID FROM Chat ORDER BY 1 "]
+17:46:11.836	  2: 	DB: << Fetch [ATable="Chat", Command="SELECT Chat.ID, Chat.TYPE_ID FROM Chat ORDER BY 1 ", RowsAffected=1]
+17:46:11.837	  2: 	DB:  . EOF reached [ATable="Chat", Command="SELECT Chat.ID, Chat.TYPE_ID FROM Chat ORDER BY 1 "]
+17:46:11.837	  2: 	DB: >> Close [Command="SELECT Chat.ID, Chat.TYPE_ID FROM Chat ORDER BY 1 "]
+17:46:11.837	  2: 	DB: << Close [Command="SELECT Chat.ID, Chat.TYPE_ID FROM Chat ORDER BY 1 "]
+17:46:11.838	  2: 	PM:	Fetched 1 IDs in class Chat from table Chat
+17:46:11.840	  2: 	SQL:	
+		SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id 
+		FROM Chat C 
+		WHERE C.ID  = 1
+17:46:11.844	  2: 	DB: >> Open [Command="SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id  FROM Chat C  WHERE C.ID  = 1 "]
+17:46:11.844	  2: 	DB: << Open [Command="SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id  FROM Chat C  WHERE C.ID  = 1 "]
+17:46:11.844	  2: 	DB: >> Fetch [ATable="Chat", Command="SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id  FROM Chat C  WHERE C.ID  = 1 "]
+17:46:11.845	  2: 	DB: << Fetch [ATable="Chat", Command="SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id  FROM Chat C  WHERE C.ID  = 1 ", RowsAffected=1]
+17:46:11.845	  2: 	DB:  . EOF reached [ATable="Chat", Command="SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id  FROM Chat C  WHERE C.ID  = 1 "]
+17:46:11.845	  2: 	DB: >> Close [Command="SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id  FROM Chat C  WHERE C.ID  = 1 "]
+17:46:11.846	  2: 	DB: << Close [Command="SELECT C.ID, C.TYPE_ID, C.idt, C.type, C.title, C.username, C.photo_small_file_id, C.small_photo_unique_id  FROM Chat C  WHERE C.ID  = 1 "]
+17:46:11.846	  2: 	PM:	Fetched 1 objects of class Chat
+17:46:11.848	  2: 	Status: 200  OK
+17:46:11.848	  2: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:46:11.848	  2: 	OutBody:
+{"value":[{"$id":1,"$type":"Chat","$obj":"Chat(1)","idt":-1002149348460,"type":"ChatType.SUPERGROUP","title":"Multi-Tool BOT TEST","username":"","photo_small_file_id":"AQADAgADWLkxG5SjYUoAEAIAA5R7PqsW____l6ihxun5JUAABB4E","small_photo_unique_id":"AgADWLkxG5SjYUo","Message@list":"Chat(1)/Message"}]}
+17:46:12.154	  3: 	>
+17:46:12.155	  3: 	POST  odata/Chat?
+17:46:12.155	  3: 	Head:
+Connection: keep-alive
+Content-Length: 211
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:46:12.155	  3: 	Body:
+[{"idt": 482250576, "type": "ChatType.PRIVATE", "title": null, "username": "urik_terkin", "photo_small_file_id": "AQADAgADqacxG1CPvhwAEAIAA1CPvhwABMLbD42SAjmsAAQeBA", "small_photo_unique_id": "AgADqacxG1CPvhw"}]
+17:46:12.198	  3: 	BodyContentType: ctJson  // JCount: 1
+17:46:12.200	  3: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:46:12.205	  3: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:46:12.206	  3: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:46:12.206	  3: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:46:12.207	  3: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:46:12.207	  3: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:46:12.207	  3: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:46:12.208	  3: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:46:12.215	  3: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:46:12.221	  3: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:46:12.226	  3: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:46:12.226	  3: 	SQL:	
+		INSERT INTO Chat (ID, TYPE_ID, idt, type, title, username, photo_small_file_id, small_photo_unique_id) 
+		VALUES (:ID, :TYPE_ID, :idt, :type, :title, :username, :photo_small_file_id, :small_photo_unique_id)
+17:46:12.227	  3: 	DB: >> Execute [Command="INSERT INTO Chat (ID, TYPE_ID, idt, type, title, username, photo_small_file_id, small_photo_unique_id)  VALUES (:ID, :TYPE_ID, :idt, :type, :title, :username, :photo_small_file_id, :small_photo_unique_id)  ", ATimes=0, AOffset=0]
+17:46:12.229	  3: 	DB: << Execute [Command="INSERT INTO Chat (ID, TYPE_ID, idt, type, title, username, photo_small_file_id, small_photo_unique_id)  VALUES (:ID, :TYPE_ID, :idt, :type, :title, :username, :photo_small_file_id, :small_photo_unique_id)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:46:12.230	  3: 	Status: 200  OK
+17:46:12.230	  3: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:46:12.230	  3: 	OutBody:
+{"NewIDs":[2]}
+17:48:09.611	  4: 	>
+17:48:09.612	  4: 	GET  odata/Chat?
+17:48:09.613	  4: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:48:09.613	  4: 	Status: 200  OK
+17:48:09.614	  4: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:48:09.614	  4: 	OutBody:
+{"value":[{"$id":1,"$type":"Chat","$obj":"Chat(1)","idt":-1002149348460,"type":"ChatType.SUPERGROUP","title":"Multi-Tool BOT TEST","username":"","photo_small_file_id":"AQADAgADWLkxG5SjYUoAEAIAA5R7PqsW____l6ihxun5JUAABB4E","small_photo_unique_id":"AgADWLkxG5SjYUo","Message@list":"Chat(1)/Message"},{"$id":2,"$type":"Chat","$obj":"Chat(2)","idt":482250576,"type":"ChatType.PRIVATE","title":"","username":"urik_terkin","photo_small_file_id":"AQADAgADqacxG1CPvhwAEAIAA1CPvhwABMLbD42SAjmsAAQeBA","small_photo_unique_id":"AgADqacxG1CPvhw","Message@list":"Chat(2)/Message"}]}
+17:48:09.618	  5: 	>
+17:48:09.619	  5: 	GET  odata/Message?
+17:48:09.619	  5: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:48:09.621	  5: 	SQL:	
+		SELECT Message.ID, Message.TYPE_ID
+		FROM Message
+		ORDER BY 1
+17:48:09.673	  5: 	DB: >> Open [Command="SELECT Message.ID, Message.TYPE_ID FROM Message ORDER BY 1 "]
+17:48:09.673	  5: 	DB: << Open [Command="SELECT Message.ID, Message.TYPE_ID FROM Message ORDER BY 1 "]
+17:48:09.673	  5: 	DB: >> Fetch [ATable="Message", Command="SELECT Message.ID, Message.TYPE_ID FROM Message ORDER BY 1 "]
+17:48:09.674	  5: 	DB: << Fetch [ATable="Message", Command="SELECT Message.ID, Message.TYPE_ID FROM Message ORDER BY 1 ", RowsAffected=0]
+17:48:09.674	  5: 	DB:  . EOF reached [ATable="Message", Command="SELECT Message.ID, Message.TYPE_ID FROM Message ORDER BY 1 "]
+17:48:09.674	  5: 	DB: >> Close [Command="SELECT Message.ID, Message.TYPE_ID FROM Message ORDER BY 1 "]
+17:48:09.675	  5: 	DB: << Close [Command="SELECT Message.ID, Message.TYPE_ID FROM Message ORDER BY 1 "]
+17:48:09.675	  5: 	PM:	Fetched 0 IDs in class Message from table Message
+17:48:09.675	  5: 	Status: 200  OK
+17:48:09.676	  5: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:48:09.676	  5: 	OutBody:
+{"value":[]}
+17:49:43.376	  6: 	>
+17:49:43.376	  6: 	GET  odata/Chat?
+17:49:43.376	  6: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:49:43.376	  6: 	Status: 200  OK
+17:49:43.376	  6: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:49:43.376	  6: 	OutBody:
+{"value":[{"$id":1,"$type":"Chat","$obj":"Chat(1)","idt":-1002149348460,"type":"ChatType.SUPERGROUP","title":"Multi-Tool BOT TEST","username":"","photo_small_file_id":"AQADAgADWLkxG5SjYUoAEAIAA5R7PqsW____l6ihxun5JUAABB4E","small_photo_unique_id":"AgADWLkxG5SjYUo","Message@list":"Chat(1)/Message"},{"$id":2,"$type":"Chat","$obj":"Chat(2)","idt":482250576,"type":"ChatType.PRIVATE","title":"","username":"urik_terkin","photo_small_file_id":"AQADAgADqacxG1CPvhwAEAIAA1CPvhwABMLbD42SAjmsAAQeBA","small_photo_unique_id":"AgADqacxG1CPvhw","Message@list":"Chat(2)/Message"}]}
+17:49:43.394	  7: 	>
+17:49:43.394	  7: 	GET  odata/Message?
+17:49:43.394	  7: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:49:43.394	  7: 	Status: 200  OK
+17:49:43.394	  7: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:49:43.394	  7: 	OutBody:
+{"value":[]}
+17:50:50.685	  8: 	>
+17:50:50.685	  8: 	GET  odata/Chat?
+17:50:50.685	  8: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:50:50.685	  8: 	Status: 200  OK
+17:50:50.685	  8: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:50:50.685	  8: 	OutBody:
+{"value":[{"$id":1,"$type":"Chat","$obj":"Chat(1)","idt":-1002149348460,"type":"ChatType.SUPERGROUP","title":"Multi-Tool BOT TEST","username":"","photo_small_file_id":"AQADAgADWLkxG5SjYUoAEAIAA5R7PqsW____l6ihxun5JUAABB4E","small_photo_unique_id":"AgADWLkxG5SjYUo","Message@list":"Chat(1)/Message"},{"$id":2,"$type":"Chat","$obj":"Chat(2)","idt":482250576,"type":"ChatType.PRIVATE","title":"","username":"urik_terkin","photo_small_file_id":"AQADAgADqacxG1CPvhwAEAIAA1CPvhwABMLbD42SAjmsAAQeBA","small_photo_unique_id":"AgADqacxG1CPvhw","Message@list":"Chat(2)/Message"}]}
+17:50:50.693	  9: 	>
+17:50:50.693	  9: 	GET  odata/Message?
+17:50:50.693	  9: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:50:50.693	  9: 	Status: 200  OK
+17:50:50.693	  9: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:50:50.693	  9: 	OutBody:
+{"value":[]}
+17:54:03.279	 10: 	>
+17:54:03.279	 10: 	GET  odata/Chat?
+17:54:03.279	 10: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:54:03.279	 10: 	Status: 200  OK
+17:54:03.279	 10: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:54:03.279	 10: 	OutBody:
+{"value":[{"$id":1,"$type":"Chat","$obj":"Chat(1)","idt":-1002149348460,"type":"ChatType.SUPERGROUP","title":"Multi-Tool BOT TEST","username":"","photo_small_file_id":"AQADAgADWLkxG5SjYUoAEAIAA5R7PqsW____l6ihxun5JUAABB4E","small_photo_unique_id":"AgADWLkxG5SjYUo","Message@list":"Chat(1)/Message"},{"$id":2,"$type":"Chat","$obj":"Chat(2)","idt":482250576,"type":"ChatType.PRIVATE","title":"","username":"urik_terkin","photo_small_file_id":"AQADAgADqacxG1CPvhwAEAIAA1CPvhwABMLbD42SAjmsAAQeBA","small_photo_unique_id":"AgADqacxG1CPvhw","Message@list":"Chat(2)/Message"}]}
+17:54:03.284	 11: 	>
+17:54:03.284	 11: 	GET  odata/Message?
+17:54:03.284	 11: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:54:03.284	 11: 	Status: 200  OK
+17:54:03.284	 11: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:54:03.284	 11: 	OutBody:
+{"value":[]}
+17:54:03.374	 12: 	>
+17:54:03.374	 12: 	POST  odata/Message?
+17:54:03.374	 12: 	Head:
+Connection: keep-alive
+Content-Length: 397
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:54:03.374	 12: 	Body:
+[{"idt": 284034, "from_user_id": 482250576, "from_user_username": "urik_terkin", "date_mes": "2024-11-09 17-30-31", "forward_from_id": null, "forward_from_username": null, "forward_date": null, "reply_to_message_id": null, "mentioned": "False", "scheduled": "False", "from_scheduled": "False", "has_protected_content": "False", "text": "1 198 039 234", "outgoing": "False", "Chat@ref": "Chat(2)"}]
+17:54:03.374	 12: 	BodyContentType: ctJson  // JCount: 1
+17:54:03.384	 12: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:54:03.420	 12: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:54:03.420	 12: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:54:03.420	 12: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:54:03.435	 12: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:54:03.435	 12: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:54:03.435	 12: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:54:03.435	 12: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:54:03.435	 12: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:54:03.468	 12: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:54:03.468	 12: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:54:03.468	 12: 	SQL:	
+		INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat) 
+		VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)
+17:54:03.468	 12: 	DB: >> Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=0, AOffset=0]
+17:54:03.468	 12: 	DB: << Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:54:03.468	 12: 	Status: 200  OK
+17:54:03.468	 12: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:54:03.468	 12: 	OutBody:
+{"NewIDs":[3]}
+17:55:07.681	 13: 	>
+17:55:07.681	 13: 	GET  odata/Chat?
+17:55:07.681	 13: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:07.681	 13: 	Status: 200  OK
+17:55:07.681	 13: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:07.681	 13: 	OutBody:
+{"value":[{"$id":1,"$type":"Chat","$obj":"Chat(1)","idt":-1002149348460,"type":"ChatType.SUPERGROUP","title":"Multi-Tool BOT TEST","username":"","photo_small_file_id":"AQADAgADWLkxG5SjYUoAEAIAA5R7PqsW____l6ihxun5JUAABB4E","small_photo_unique_id":"AgADWLkxG5SjYUo","Message@list":"Chat(1)/Message"},{"$id":2,"$type":"Chat","$obj":"Chat(2)","idt":482250576,"type":"ChatType.PRIVATE","title":"","username":"urik_terkin","photo_small_file_id":"AQADAgADqacxG1CPvhwAEAIAA1CPvhwABMLbD42SAjmsAAQeBA","small_photo_unique_id":"AgADqacxG1CPvhw","Message@list":"Chat(2)/Message"}]}
+17:55:07.699	 14: 	>
+17:55:07.699	 14: 	GET  odata/Message?
+17:55:07.699	 14: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:07.699	 14: 	Status: 200  OK
+17:55:07.699	 14: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:07.699	 14: 	OutBody:
+{"value":[{"$id":3,"$type":"Message","$obj":"Message(3)","idt":284034,"from_user_id":482250576,"from_user_username":"urik_terkin","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"1 198 039 234","outgoing":false,"Chat@ref":"Chat(2)"}]}
+17:55:33.156	 15: 	>
+17:55:33.156	 15: 	GET  odata/Chat?
+17:55:33.156	 15: 	Head:
+Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.156	 15: 	Status: 200  OK
+17:55:33.156	 15: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.156	 15: 	OutBody:
+{"value":[{"$id":1,"$type":"Chat","$obj":"Chat(1)","idt":-1002149348460,"type":"ChatType.SUPERGROUP","title":"Multi-Tool BOT TEST","username":"","photo_small_file_id":"AQADAgADWLkxG5SjYUoAEAIAA5R7PqsW____l6ihxun5JUAABB4E","small_photo_unique_id":"AgADWLkxG5SjYUo","Message@list":"Chat(1)/Message"},{"$id":2,"$type":"Chat","$obj":"Chat(2)","idt":482250576,"type":"ChatType.PRIVATE","title":"","username":"urik_terkin","photo_small_file_id":"AQADAgADqacxG1CPvhwAEAIAA1CPvhwABMLbD42SAjmsAAQeBA","small_photo_unique_id":"AgADqacxG1CPvhw","Message@list":"Chat(2)/Message"}]}
+17:55:33.444	 16: 	>
+17:55:33.444	 16: 	POST  odata/Chat?
+17:55:33.444	 16: 	Head:
+Connection: keep-alive
+Content-Length: 259
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.444	 16: 	Body:
+[{"idt": -1001520678654, "type": "ChatType.SUPERGROUP", "title": "\u041f\u043e\u043b\u0438\u0433\u043e\u043d", "username": "poligoonn", "photo_small_file_id": "AQADAgAD5t0xG4AFuUgAEAIAAwI5t9AW____O15Aqqyzjo4ABB4E", "small_photo_unique_id": "AgAD5t0xG4AFuUg"}]
+17:55:33.444	 16: 	BodyContentType: ctJson  // JCount: 1
+17:55:33.459	 16: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:55:33.499	 16: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.499	 16: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.499	 16: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.499	 16: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:55:33.499	 16: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.499	 16: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.499	 16: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.505	 16: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:55:33.505	 16: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:55:33.505	 16: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.505	 16: 	SQL:	
+		INSERT INTO Chat (ID, TYPE_ID, idt, type, title, username, photo_small_file_id, small_photo_unique_id) 
+		VALUES (:ID, :TYPE_ID, :idt, :type, :title, :username, :photo_small_file_id, :small_photo_unique_id)
+17:55:33.505	 16: 	DB: >> Execute [Command="INSERT INTO Chat (ID, TYPE_ID, idt, type, title, username, photo_small_file_id, small_photo_unique_id)  VALUES (:ID, :TYPE_ID, :idt, :type, :title, :username, :photo_small_file_id, :small_photo_unique_id)  ", ATimes=0, AOffset=0]
+17:55:33.505	 16: 	DB: << Execute [Command="INSERT INTO Chat (ID, TYPE_ID, idt, type, title, username, photo_small_file_id, small_photo_unique_id)  VALUES (:ID, :TYPE_ID, :idt, :type, :title, :username, :photo_small_file_id, :small_photo_unique_id)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.505	 16: 	Status: 200  OK
+17:55:33.505	 16: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.505	 16: 	OutBody:
+{"NewIDs":[4]}
+17:55:33.683	 17: 	>
+17:55:33.683	 17: 	POST  odata/Message?
+17:55:33.683	 17: 	Head:
+Connection: keep-alive
+Content-Length: 481
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.683	 17: 	Body:
+[{"idt": 29191, "from_user_id": 693852768, "from_user_username": "KurnaevDV", "date_mes": "2024-11-09 17-15-22", "forward_from_id": null, "forward_from_username": null, "forward_date": null, "reply_to_message_id": null, "mentioned": "False", "scheduled": "False", "from_scheduled": "False", "has_protected_content": "False", "text": "\u041d\u0435 \u0437\u043d\u0430\u044e \u0432 \u0447\u0435\u043c \u043f\u0440\u0438\u043a\u043e\u043b", "outgoing": "False", "Chat@ref": "Chat(4)"}]
+17:55:33.683	 17: 	BodyContentType: ctJson  // JCount: 1
+17:55:33.683	 17: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:55:33.736	 17: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.736	 17: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.736	 17: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.736	 17: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:55:33.736	 17: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.736	 17: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.736	 17: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.736	 17: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:55:33.736	 17: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:55:33.736	 17: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.736	 17: 	SQL:	
+		INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat) 
+		VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)
+17:55:33.736	 17: 	DB: >> Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=0, AOffset=0]
+17:55:33.736	 17: 	DB: << Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.751	 17: 	Status: 200  OK
+17:55:33.751	 17: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.751	 17: 	OutBody:
+{"NewIDs":[5]}
+17:55:33.751	 18: 	>
+17:55:33.751	 18: 	POST  odata/Message?
+17:55:33.751	 18: 	Head:
+Connection: keep-alive
+Content-Length: 393
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.751	 18: 	Body:
+[{"idt": 29190, "from_user_id": 693852768, "from_user_username": "KurnaevDV", "date_mes": "2024-11-09 17-15-17", "forward_from_id": null, "forward_from_username": null, "forward_date": null, "reply_to_message_id": null, "mentioned": "False", "scheduled": "False", "from_scheduled": "False", "has_protected_content": "False", "text": "\u0425\u0437", "outgoing": "False", "Chat@ref": "Chat(4)"}]
+17:55:33.759	 18: 	BodyContentType: ctJson  // JCount: 1
+17:55:33.759	 18: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:55:33.759	 18: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.759	 18: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.759	 18: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.759	 18: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:55:33.759	 18: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.759	 18: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.759	 18: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.768	 18: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:55:33.768	 18: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:55:33.773	 18: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.775	 18: 	SQL:	
+		INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat) 
+		VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)
+17:55:33.775	 18: 	DB: >> Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=0, AOffset=0]
+17:55:33.775	 18: 	DB: << Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.775	 18: 	Status: 200  OK
+17:55:33.775	 18: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.775	 18: 	OutBody:
+{"NewIDs":[6]}
+17:55:33.783	 19: 	>
+17:55:33.786	 19: 	POST  odata/Message?
+17:55:33.786	 19: 	Head:
+Connection: keep-alive
+Content-Length: 451
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.786	 19: 	Body:
+[{"idt": 29189, "from_user_id": 693852768, "from_user_username": "KurnaevDV", "date_mes": "2024-11-09 17-15-15", "forward_from_id": null, "forward_from_username": null, "forward_date": null, "reply_to_message_id": null, "mentioned": "False", "scheduled": "False", "from_scheduled": "False", "has_protected_content": "False", "text": "\u042f \u0434\u0443\u043c\u0430\u044e, \u0447\u0442\u043e \u0434\u0430", "outgoing": "False", "Chat@ref": "Chat(4)"}]
+17:55:33.786	 19: 	BodyContentType: ctJson  // JCount: 1
+17:55:33.788	 19: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:55:33.788	 19: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.788	 19: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.788	 19: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.788	 19: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:55:33.788	 19: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.788	 19: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.788	 19: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.788	 19: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:55:33.788	 19: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:55:33.788	 19: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.788	 19: 	SQL:	
+		INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat) 
+		VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)
+17:55:33.788	 19: 	DB: >> Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=0, AOffset=0]
+17:55:33.801	 19: 	DB: << Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.801	 19: 	Status: 200  OK
+17:55:33.801	 19: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.801	 19: 	OutBody:
+{"NewIDs":[7]}
+17:55:33.805	 20: 	>
+17:55:33.805	 20: 	POST  odata/Message?
+17:55:33.805	 20: 	Head:
+Connection: keep-alive
+Content-Length: 494
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.805	 20: 	Body:
+[{"idt": 29188, "from_user_id": 817688918, "from_user_username": "VartanyanAK", "date_mes": "2024-11-09 17-15-09", "forward_from_id": null, "forward_from_username": null, "forward_date": null, "reply_to_message_id": null, "mentioned": "False", "scheduled": "False", "from_scheduled": "False", "has_protected_content": "False", "text": "\u0427\u0442\u043e \u0437\u0430 \u0434\u0438\u0447\u044c \u0430\u0445\u0430\u0445\u0430\u0445\u0430\u0445\u0430", "outgoing": "False", "Chat@ref": "Chat(4)"}]
+17:55:33.805	 20: 	BodyContentType: ctJson  // JCount: 1
+17:55:33.805	 20: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:55:33.813	 20: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.814	 20: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.814	 20: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.814	 20: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:55:33.814	 20: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.814	 20: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.814	 20: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.814	 20: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:55:33.821	 20: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:55:33.821	 20: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.821	 20: 	SQL:	
+		INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat) 
+		VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)
+17:55:33.821	 20: 	DB: >> Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=0, AOffset=0]
+17:55:33.821	 20: 	DB: << Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.821	 20: 	Status: 200  OK
+17:55:33.821	 20: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.821	 20: 	OutBody:
+{"NewIDs":[8]}
+17:55:33.821	 21: 	>
+17:55:33.821	 21: 	POST  odata/Message?
+17:55:33.821	 21: 	Head:
+Connection: keep-alive
+Content-Length: 421
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.821	 21: 	Body:
+[{"idt": 29187, "from_user_id": 817688918, "from_user_username": "VartanyanAK", "date_mes": "2024-11-09 17-15-05", "forward_from_id": null, "forward_from_username": null, "forward_date": null, "reply_to_message_id": null, "mentioned": "False", "scheduled": "False", "from_scheduled": "False", "has_protected_content": "False", "text": "\u042d\u0442\u043e \u0431\u043e\u0442?", "outgoing": "False", "Chat@ref": "Chat(4)"}]
+17:55:33.835	 21: 	BodyContentType: ctJson  // JCount: 1
+17:55:33.837	 21: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:55:33.837	 21: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.837	 21: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.837	 21: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.837	 21: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:55:33.837	 21: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.837	 21: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.837	 21: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.837	 21: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:55:33.837	 21: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:55:33.837	 21: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.837	 21: 	SQL:	
+		INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat) 
+		VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)
+17:55:33.837	 21: 	DB: >> Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=0, AOffset=0]
+17:55:33.837	 21: 	DB: << Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.852	 21: 	Status: 200  OK
+17:55:33.852	 21: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.852	 21: 	OutBody:
+{"NewIDs":[9]}
+17:55:33.856	 22: 	>
+17:55:33.856	 22: 	POST  odata/Message?
+17:55:33.856	 22: 	Head:
+Connection: keep-alive
+Content-Length: 467
+Content-Type: application/json
+Accept: */*
+Accept-Encoding: gzip, deflate
+Host: localhost:4388
+User-Agent: python-requests/2.32.3
+
+17:55:33.856	 22: 	Body:
+[{"idt": 29186, "from_user_id": 817688918, "from_user_username": "VartanyanAK", "date_mes": "2024-11-09 17-15-03", "forward_from_id": null, "forward_from_username": null, "forward_date": null, "reply_to_message_id": null, "mentioned": "False", "scheduled": "False", "from_scheduled": "False", "has_protected_content": "False", "text": "\u0410\u0445\u0430\u0445\u0430\u0445\u0430\u0445\u0445\u0430\u0445\u0430\u0430\u0445", "outgoing": "False", "Chat@ref": "Chat(4)"}]
+17:55:33.856	 22: 	BodyContentType: ctJson  // JCount: 1
+17:55:33.856	 22: 	SQL:	SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE
+17:55:33.856	 22: 	DB: >> Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.856	 22: 	DB: << Open [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.856	 22: 	DB: >> Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.856	 22: 	DB: << Fetch [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE ", RowsAffected=1]
+17:55:33.856	 22: 	DB:  . EOF reached [ATable="RDB$DATABASE", Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.856	 22: 	DB: >> Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.864	 22: 	DB: << Close [Command="SELECT GEN_ID(GEN_TgBotMes_ID, 1) FROM RDB$DATABASE "]
+17:55:33.866	 22: 	SQL:	
+		INSERT INTO BusinessClassesRoot (ID, TYPE_ID) 
+		VALUES (:ID, :TYPE_ID)
+17:55:33.866	 22: 	DB: >> Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=0, AOffset=0]
+17:55:33.871	 22: 	DB: << Execute [Command="INSERT INTO BusinessClassesRoot (ID, TYPE_ID)  VALUES (:ID, :TYPE_ID)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.871	 22: 	SQL:	
+		INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat) 
+		VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)
+17:55:33.871	 22: 	DB: >> Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=0, AOffset=0]
+17:55:33.871	 22: 	DB: << Execute [Command="INSERT INTO Message (ID, TYPE_ID, idt, from_user_id, from_user_username, date_mes, forward_from_id, forward_from_username, forward_date, reply_to_message_id, mentioned, scheduled, from_scheduled, has_protected_content, text, outgoing, Chat)  VALUES (:ID, :TYPE_ID, :idt, :from_user_id, :from_user_username, :date_mes, :forward_from_id, :forward_from_username, :forward_date, :reply_to_message_id, :mentioned, :scheduled, :from_scheduled, :has_protected_content, :text, :outgoing, :Chat)  ", ATimes=1, AOffset=0, RowsAffected=1, RowsAffectedReal=True, ErrorAction=5]
+17:55:33.871	 22: 	Status: 200  OK
+17:55:33.871	 22: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:55:33.871	 22: 	OutBody:
+{"NewIDs":[10]}
+17:56:31.971	 23: 	>
+17:56:31.979	 23: 	GET  odata/?
+17:56:31.979	 23: 	Head:
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Host: localhost:4388
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
+sec-ch-ua: "Chromium";v="130", "Google Chrome";v="130", "Not?A_Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+
+17:56:31.979	 23: 	Status: 200  OK
+17:56:31.979	 23: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:56:31.979	 23: 	OutBody:
+{"ModelName":"TgBotMes","ModelVersion":0,"ModelCRC":"2029927589","Classes":[{"name":"BusinessClassesRoot","link":"http://localhost:4388/ham/odata/BusinessClassesRoot/"},{"name":"Chat","link":"http://localhost:4388/ham/odata/Chat/"},{"name":"Message","link":"http://localhost:4388/ham/odata/Message/"},{"name":"Photo","link":"http://localhost:4388/ham/odata/Photo/"},{"name":"Sticker","link":"http://localhost:4388/ham/odata/Sticker/"},{"name":"Video","link":"http://localhost:4388/ham/odata/Video/"},{"name":"Voice","link":"http://localhost:4388/ham/odata/Voice/"}]}
+17:56:33.517	 24: 	>
+17:56:33.517	 24: 	GET  odata/Message/?
+17:56:33.517	 24: 	Head:
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+Host: localhost:4388
+Referer: http://localhost:4388/ham/odata/
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36
+sec-ch-ua: "Chromium";v="130", "Google Chrome";v="130", "Not?A_Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+
+17:56:33.517	 24: 	Status: 200  OK
+17:56:33.517	 24: 	OutHead:
+Content-Type: application/json; charset=UTF-8
+17:56:33.517	 24: 	OutBody:
+{"value":[{"$id":3,"$type":"Message","$obj":"Message(3)","idt":284034,"from_user_id":482250576,"from_user_username":"urik_terkin","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"1 198 039 234","outgoing":false,"Chat@ref":"Chat(2)"},{"$id":5,"$type":"Message","$obj":"Message(5)","idt":29191,"from_user_id":693852768,"from_user_username":"KurnaevDV","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"Не знаю в чем прикол","outgoing":false,"Chat@ref":"Chat(4)"},{"$id":6,"$type":"Message","$obj":"Message(6)","idt":29190,"from_user_id":693852768,"from_user_username":"KurnaevDV","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"Хз","outgoing":false,"Chat@ref":"Chat(4)"},{"$id":7,"$type":"Message","$obj":"Message(7)","idt":29189,"from_user_id":693852768,"from_user_username":"KurnaevDV","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"Я думаю, что да","outgoing":false,"Chat@ref":"Chat(4)"},{"$id":8,"$type":"Message","$obj":"Message(8)","idt":29188,"from_user_id":817688918,"from_user_username":"VartanyanAK","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"Что за дичь ахахахаха","outgoing":false,"Chat@ref":"Chat(4)"},{"$id":9,"$type":"Message","$obj":"Message(9)","idt":29187,"from_user_id":817688918,"from_user_username":"VartanyanAK","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"Это бот?","outgoing":false,"Chat@ref":"Chat(4)"},{"$id":10,"$type":"Message","$obj":"Message(10)","idt":29186,"from_user_id":817688918,"from_user_username":"VartanyanAK","date_mes":"2024-11-09 00:00:00","forward_from_id":null,"forward_from_username":"","forward_date":null,"reply_to_message_id":null,"mentioned":false,"scheduled":false,"from_scheduled":false,"has_protected_content":false,"text":"Ахахахаххахаах","outgoing":false,"Chat@ref":"Chat(4)"}]}
