@@ -67,7 +67,6 @@ offset_id = 0
 def post_info():
     # Загружает информацию о чате в БД, возвращает Hameleon'овский id чата
     def post_chat_info():
-        
         message = next(app.get_chat_history(chat_id, limit=1))
         print(message)
         data_chat = [{
@@ -83,18 +82,13 @@ def post_info():
         return chat_id_ham
 
     # Загрузка сообщений в БД
-    def post_message_info(chat_id, offset_id, chat_id_ham, last_message_id, data_message, count_message_in_db):
-        # chat_id = '-674390717'
-        
+    def post_message_info(chat_id, offset_id, chat_id_ham, last_message_id, data_message, count_message_in_db):        
         print(f"[INFO] Перебор сообщений")
         for message in app.get_chat_history(chat_id=chat_id, offset_id=offset_id):
             if message.migrate_from_chat_id:
                 post_message_info(chat_id=message.migrate_from_chat_id, offset_id=0, chat_id_ham=chat_id_ham, last_message_id=last_message_id, data_message=data_message, count_message_in_db=count_message_in_db)
                 data_message = []
                 break
-            print(message.id, message.text)
-            break
-            # print(message.id, message.text)
 
             if message.id <= last_message_id:
                 print(f"[WARNING] Началось повторение сообщений. Было добавлено новых сообщений: {len(data_message)}") 
@@ -117,60 +111,60 @@ def post_info():
                 "outgoing": "True" if message.outgoing else "False",
                 "Chat@ref": f'Chat({chat_id_ham})'
             }]
-            # if message.photo:
-            #     if not os.path.isfile(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg"):
-            #         app.download_media(message.photo.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg")
-            #     data_message[count].update({
-            #         "$type": "Photo",
-            #         "file_id": message.photo.file_id,
-            #         "file_size": message.photo.file_size,
-            #         "date_photo": str(message.photo.date),
-            #         "caption": message.caption if message.caption else None
-            #     })
-            # elif message.video:
-            #     if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.mp4"):
-            #         app.download_media(message.video.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.mp4")
-            #     data_message[count].update({
-            #         "$type": "Video",
-            #         "file_id": message.video.file_id,
-            #         "file_size": message.video.file_size,
-            #         "mime_type": message.video.mime_type,
-            #         "duration": message.video.duration,
-            #         "date_video": str(message.video.date),
-            #         "caption": message.caption if message.caption else None
-            #     })
-            # elif message.voice:
-            #     if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.ogg"):
-            #         app.download_media(message.voice.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.ogg")    
-            #     data_message[count].update({
-            #         "$type": "Voice",
-            #         "file_id": message.voice.file_id,
-            #         "file_size": message.voice.file_size,
-            #         "mime_type": message.voice.mime_type,
-            #         "duration": message.voice.duration,
-            #         "date_voice": str(message.voice.date)
-            #     })
-            # elif message.sticker:
-            #     if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg"):
-            #         app.download_media(message.sticker.file_id, file_name=f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg")    
-            #     data_message[count].update({
-            #         "$type": "Sticker",
-            #         "file_id": message.sticker.file_id,
-            #         "file_size": message.sticker.file_size,
-            #         "mime_type": message.sticker.mime_type,
-            #         "date_sticker": str(message.sticker.date),
-            #         "emoji": message.sticker.emoji,
-            #         "set_name": message.sticker.set_name
-            #     })
-            # else:
-            # data_message[count].update({"$type": "Message"})
+            if message.photo:
+                if not os.path.isfile(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg"):
+                    app.download_media(message.photo.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg")
+                data_message[count].update({
+                    "$type": "Photo",
+                    "file_id": message.photo.file_id,
+                    "file_size": message.photo.file_size,
+                    "date_photo": str(message.photo.date),
+                    "caption": message.caption if message.caption else None
+                })
+            elif message.video:
+                if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.mp4"):
+                    app.download_media(message.video.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.mp4")
+                data_message[count].update({
+                    "$type": "Video",
+                    "file_id": message.video.file_id,
+                    "file_size": message.video.file_size,
+                    "mime_type": message.video.mime_type,
+                    "duration": message.video.duration,
+                    "date_video": str(message.video.date),
+                    "caption": message.caption if message.caption else None
+                })
+            elif message.voice:
+                if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.ogg"):
+                    app.download_media(message.voice.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.ogg")    
+                data_message[count].update({
+                    "$type": "Voice",
+                    "file_id": message.voice.file_id,
+                    "file_size": message.voice.file_size,
+                    "mime_type": message.voice.mime_type,
+                    "duration": message.voice.duration,
+                    "date_voice": str(message.voice.date)
+                })
+            elif message.sticker:
+                if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg"):
+                    app.download_media(message.sticker.file_id, file_name=f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg")    
+                data_message[count].update({
+                    "$type": "Sticker",
+                    "file_id": message.sticker.file_id,
+                    "file_size": message.sticker.file_size,
+                    "mime_type": message.sticker.mime_type,
+                    "date_sticker": str(message.sticker.date),
+                    "emoji": message.sticker.emoji,
+                    "set_name": message.sticker.set_name
+                })
+            else:
+                data_message[count].update({"$type": "Message"})
 
             # Условие загрузки сообщений в БД пачками по 100 штук сообщений
             if len(data_message)+1 == bulk_count:
                 count_message_in_db += bulk_count
                 print(f">>>")
                 print(f"[INFO] Загрузка {bulk_count} сообщений в БД. Всего загружено {count_message_in_db} сообщений")
-                # response = requests.post(f'{url}/ham/odata/', json=data_message)
+                response = requests.post(f'{url}/ham/odata/', json=data_message)
                 data_message = []
                 print(f"[INFO] Статус загрузки этой части сообщений в БД - {response.status_code}")            
         
@@ -179,7 +173,7 @@ def post_info():
             count_message_in_db += bulk_count
             print(f">>>")
             print(f"[INFO] Загрузка последних {len(data_message)+1} сообщений в БД. Всего загружено {count_message_in_db} сообщений")
-            # response = requests.post(f'{url}/ham/odata/', json=data_message)
+            response = requests.post(f'{url}/ham/odata/', json=data_message)
             print(f"[INFO] Статус загрузки этой части сообщений в БД - {response.status_code}")
 
 
