@@ -59,16 +59,12 @@ if count_param == 2:
     chat_id = sys.argv[1]
     offset_id = min_id()
 
-chat_id = '-674390717'  #  -1002149348460     -674390717  "migrate_from_chat_id": -674390717
-offset_id = 0
-
 
 # Сохранение истории сообщений
 def post_info():
     # Загружает информацию о чате в БД, возвращает Hameleon'овский id чата
     def post_chat_info():
         message = next(app.get_chat_history(chat_id, limit=1))
-        print(message)
         data_chat = [{
             "idt": message.chat.id,
             "type": str(message.chat.type),
@@ -85,79 +81,106 @@ def post_info():
     def post_message_info(chat_id, offset_id, chat_id_ham, last_message_id, data_message, count_message_in_db):        
         print(f"[INFO] Перебор сообщений")
         for message in app.get_chat_history(chat_id=chat_id, offset_id=offset_id):
+            count = len(data_message)
+
             if message.migrate_from_chat_id:
                 post_message_info(chat_id=message.migrate_from_chat_id, offset_id=0, chat_id_ham=chat_id_ham, last_message_id=last_message_id, data_message=data_message, count_message_in_db=count_message_in_db)
                 data_message = []
                 break
-
+            
             if message.id <= last_message_id:
                 print(f"[WARNING] Началось повторение сообщений. Было добавлено новых сообщений: {len(data_message)}") 
                 break
 
-            data_message += [{
-                "idt": message.id,
-                "from_user_id": message.from_user.id,
-                "from_user_username": message.from_user.username,
-                "date_mes": str(message.date),
-                "forward_from_id": message.forward_from.id if message.forward_from else None,
-                "forward_from_username": message.forward_from.username if message.forward_from else None,
-                "forward_date": str(message.forward_date) if message.forward_date else None,
-                "reply_to_message_id": message.reply_to_message_id if message.reply_to_message_id else None,
-                "mentioned": "True" if message.mentioned else "False",
-                "scheduled": "True" if message.scheduled else "False",
-                "from_scheduled": "True" if message.from_scheduled else "False",
-                "has_protected_content": "True" if message.has_protected_content else "False",
-                "text": message.text if message.text else None,
-                "outgoing": "True" if message.outgoing else "False",
-                "Chat@ref": f'Chat({chat_id_ham})'
-            }]
-            if message.photo:
-                if not os.path.isfile(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg"):
-                    app.download_media(message.photo.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg")
-                data_message[count].update({
-                    "$type": "Photo",
-                    "file_id": message.photo.file_id,
-                    "file_size": message.photo.file_size,
-                    "date_photo": str(message.photo.date),
-                    "caption": message.caption if message.caption else None
-                })
-            elif message.video:
-                if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.mp4"):
-                    app.download_media(message.video.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.mp4")
-                data_message[count].update({
-                    "$type": "Video",
-                    "file_id": message.video.file_id,
-                    "file_size": message.video.file_size,
-                    "mime_type": message.video.mime_type,
-                    "duration": message.video.duration,
-                    "date_video": str(message.video.date),
-                    "caption": message.caption if message.caption else None
-                })
-            elif message.voice:
-                if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.ogg"):
-                    app.download_media(message.voice.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.ogg")    
-                data_message[count].update({
-                    "$type": "Voice",
-                    "file_id": message.voice.file_id,
-                    "file_size": message.voice.file_size,
-                    "mime_type": message.voice.mime_type,
-                    "duration": message.voice.duration,
-                    "date_voice": str(message.voice.date)
-                })
-            elif message.sticker:
-                if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg"):
-                    app.download_media(message.sticker.file_id, file_name=f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg")    
-                data_message[count].update({
-                    "$type": "Sticker",
-                    "file_id": message.sticker.file_id,
-                    "file_size": message.sticker.file_size,
-                    "mime_type": message.sticker.mime_type,
-                    "date_sticker": str(message.sticker.date),
-                    "emoji": message.sticker.emoji,
-                    "set_name": message.sticker.set_name
-                })
+            if message.mentioned == None:
+                data_message += [{
+                    "idt": message.id,
+                    "from_user_id": message.from_user.id,
+                    "from_user_username": message.from_user.username,
+                    "date_mes": str(message.date),
+                    "forward_from_id": message.forward_from.id if message.forward_from else None,
+                    "forward_from_username": message.forward_from.username if message.forward_from else None,
+                    "forward_date": str(message.forward_date) if message.forward_date else None,
+                    "reply_to_message_id": message.reply_to_message_id if message.reply_to_message_id else None,
+                    "mentioned": "True" if message.mentioned else "False",
+                    "scheduled": "True" if message.scheduled else "False",
+                    "from_scheduled": "True" if message.from_scheduled else "False",
+                    "has_protected_content": "True" if message.has_protected_content else "False",
+                    "text": message.text if message.text else None,
+                    "outgoing": "True" if message.outgoing else "False",
+                    "unknown_message": str(message),
+                    "Chat@ref": f'Chat({chat_id_ham})',
+                    "$type": "Message"
+                }]
             else:
-                data_message[count].update({"$type": "Message"})
+                data_message += [{
+                    "idt": message.id,
+                    "from_user_id": message.from_user.id,
+                    "from_user_username": message.from_user.username,
+                    "date_mes": str(message.date),
+                    "forward_from_id": message.forward_from.id if message.forward_from else None,
+                    "forward_from_username": message.forward_from.username if message.forward_from else None,
+                    "forward_date": str(message.forward_date) if message.forward_date else None,
+                    "reply_to_message_id": message.reply_to_message_id if message.reply_to_message_id else None,
+                    "mentioned": "True" if message.mentioned else "False",
+                    "scheduled": "True" if message.scheduled else "False",
+                    "from_scheduled": "True" if message.from_scheduled else "False",
+                    "has_protected_content": "True" if message.has_protected_content else "False",
+                    "text": message.text if message.text else None,
+                    "outgoing": "True" if message.outgoing else "False",
+                    "Chat@ref": f'Chat({chat_id_ham})'
+                }]
+                if message.photo:
+                    if not os.path.isfile(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg"):
+                        app.download_media(message.photo.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg")
+                    data_message[count].update({
+                        "$type": "Photo",
+                        "file_id": message.photo.file_id,
+                        "file_size": message.photo.file_size,
+                        "date_photo": str(message.photo.date),
+                        "caption": message.caption if message.caption else None,
+                        "path": str(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg")
+                    })
+                elif message.video:
+                    if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.mp4"):
+                        app.download_media(message.video.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.mp4")
+                    data_message[count].update({
+                        "$type": "Video",
+                        "file_id": message.video.file_id,
+                        "file_size": message.video.file_size,
+                        "mime_type": message.video.mime_type,
+                        "duration": message.video.duration,
+                        "date_video": str(message.video.date),
+                        "caption": message.caption if message.caption else None,
+                        "path": str(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.mp4")
+                    })
+                elif message.voice:
+                    if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.ogg"):
+                        app.download_media(message.voice.file_id, file_name=f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.ogg")    
+                    data_message[count].update({
+                        "$type": "Voice",
+                        "file_id": message.voice.file_id,
+                        "file_size": message.voice.file_size,
+                        "mime_type": message.voice.mime_type,
+                        "duration": message.voice.duration,
+                        "date_voice": str(message.voice.date),
+                        "path": str(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.ogg")
+                    })
+                elif message.sticker:
+                    if not os.path.isfile(f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg"):
+                        app.download_media(message.sticker.file_id, file_name=f"Media/{chat_id}/{date_reworker(message.date)}_{message.id}.jpg")    
+                    data_message[count].update({
+                        "$type": "Sticker",
+                        "file_id": message.sticker.file_id,
+                        "file_size": message.sticker.file_size,
+                        "mime_type": message.sticker.mime_type,
+                        "date_sticker": str(message.sticker.date),
+                        "emoji": message.sticker.emoji,
+                        "set_name": message.sticker.set_name,
+                        "path": str(f"Media\{chat_id}\{date_reworker(message.date)}_{message.id}.jpg")
+                    })
+                else:
+                    data_message[count].update({"$type": "Message"})
 
             # Условие загрузки сообщений в БД пачками по 100 штук сообщений
             if len(data_message)+1 == bulk_count:
@@ -166,7 +189,9 @@ def post_info():
                 print(f"[INFO] Загрузка {bulk_count} сообщений в БД. Всего загружено {count_message_in_db} сообщений")
                 response = requests.post(f'{url}/ham/odata/', json=data_message)
                 data_message = []
-                print(f"[INFO] Статус загрузки этой части сообщений в БД - {response.status_code}")            
+                print(f"[INFO] Статус загрузки этой части сообщений в БД - {response.status_code}")    
+                if response.status_code == 400:
+                    break   
         
         # Условие загрузки сообщений в БД пачкой, когда в ней меньше 100 штук сообщений (По сути - самые последние сообщения)
         if len(data_message)+1 < bulk_count and len(data_message) != 0:
