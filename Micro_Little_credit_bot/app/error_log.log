@@ -1,0 +1,22 @@
+2025-01-30 20:16:08,925 - __main__ - ERROR - Ошибка при обработке сообщения ✅Согласиться: [Errno 2] No such file or directory: 'media/output.xlsx' в состоянии 'approval'
+2025-01-30 20:57:44,489 - __main__ - ERROR - Ошибка при обработке сообщения /start: name 'user' is not defined в состоянии 'start'
+2025-01-30 22:06:32,579 - __main__ - ERROR - Ошибка при обработке сообщения 89772711690: Telegram server says - Bad Request: can't parse entities: Character '-' is reserved and must be escaped with the preceding '\' в состоянии 'phone_number'
+2025-01-30 22:11:53,728 - __main__ - ERROR - Ошибка при обработке сообщения ✅Все верно: Telegram server says - Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 124 в состоянии 'pay_done'
+2025-01-30 22:14:08,719 - __main__ - ERROR - Ошибка при обработке сообщения ✅Все верно: Telegram server says - Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 124 в состоянии 'pay_done'
+2025-01-30 22:17:18,504 - __main__ - ERROR - Ошибка при обработке сообщения ✅Все верно: Telegram server says - Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 124 в состоянии 'pay_done'
+2025-01-30 22:19:57,498 - __main__ - ERROR - Ошибка при обработке сообщения ✅Все верно: Telegram server says - Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 122 в состоянии 'pay_done'
+2025-01-30 22:21:40,121 - __main__ - ERROR - Ошибка при обработке сообщения ✅Все верно: Telegram server says - Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 124 в состоянии 'pay_done'
+2025-01-31 19:58:14,578 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-01-31 23:17:33,807 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramRetryAfter: Telegram server says - Flood control exceeded on method 'GetUpdates'. Retry in 5 seconds.
+Original description: Too Many Requests: retry after 5
+(background on this error at: https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this)
+2025-01-31 23:17:34,858 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramRetryAfter: Telegram server says - Flood control exceeded on method 'GetUpdates'. Retry in 5 seconds.
+Original description: Too Many Requests: retry after 5
+(background on this error at: https://core.telegram.org/bots/faq#my-bot-is-hitting-limits-how-do-i-avoid-this)
+2025-01-31 23:17:36,687 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramServerError: Telegram server says - Bad Gateway
+2025-02-01 14:51:00,167 - __main__ - ERROR - Ошибка при обработке сообщения ✅Консультацию оплатил: __init__() takes 1 positional argument but 2 were given в состоянии 'approval'
+2025-02-02 11:49:23,251 - __main__ - ERROR - Ошибка при обработке сообщения ✅Консультацию оплатил: __init__() got an unexpected keyword argument 'parse_mode' в состоянии 'approval'
+2025-02-02 12:31:38,967 - __main__ - ERROR - Ошибка при обработке сообщения ❌Отказаться: [Errno 13] Permission denied: 'media/data.xlsx' в состоянии 'approval'
+2025-02-02 12:55:55,030 - __main__ - ERROR - Ошибка при обработке сообщения ✅Отправил: 7 columns passed, passed data had 5 columns в состоянии 'finish'
+2025-02-02 12:56:29,076 - __main__ - ERROR - Ошибка при обработке сообщения ❌Отказаться: 7 columns passed, passed data had 5 columns в состоянии 'approval'
+2025-02-02 13:19:31,794 - __main__ - ERROR - Ошибка при обработке сообщения ❌Отказаться: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all(). в состоянии 'approval'
