@@ -287,7 +287,7 @@ def post_info(chat_id, offset_id):
             else:
                 last_message_id = -1
                 print(f"[INFO] Чат найден, начинаю загрузку полной истории сообщений")
-                
+
             # Загрузка сообщений в БД
             post_message_info(chat_id, offset_id, chat_id_ham, last_message_id, data_message=[], count_message_in_db=0)
     except Exception as inst:
@@ -310,10 +310,7 @@ if count_param == 1:
 if count_param == 2:
     chat_id = sys.argv[1]
     offset_id = min_id(chat_id)
-
-chat_id = "-1002149348460"
-# offset_id = min_id(chat_id)
-offset_id = 0
+    
 
 with Client(name="my_account", api_hash=api_hash, api_id=api_id) as app:
     post_info(chat_id=chat_id, offset_id=offset_id)
