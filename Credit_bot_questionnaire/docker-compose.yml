@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  bot:
+    build:
+      context: .  # Контекст сборки — корень проекта
+      dockerfile: Dockerfile  # Путь к Dockerfile
+    volumes:
+      - ./app:/app  # Монтирование папки app
+    working_dir: /app  # Рабочая директория в контейнере
+    command: python main.py  # Команда для запуска
