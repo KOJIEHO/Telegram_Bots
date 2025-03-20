@@ -14,7 +14,7 @@ from app.handlers.car_loan import car_loan_router
 from app.handlers.credit_pod_zalog import credit_pod_zalog_router
 from app.handlers.ipoteka import ipoteka_router
 # from app.handlers.main import main_router
-# from app.handlers.microloan import microloan_router
+from app.handlers.micro_loan import micro_loan_router
 # Импорт форм для всех модулей
 from app.model import model_car_loan, model_credit_pod_zalog, model_ipoteka, model_main, model_microloan
 # Импорт токена
@@ -32,6 +32,7 @@ logger = logging.getLogger(__name__)
 
 dp = Dispatcher()
 dp.include_routers(
+    car_loan_router,
     credit_pod_zalog_router, 
     ipoteka_router
 )
@@ -126,8 +127,20 @@ async def credit_type(message: Message, state: FSMContext):
         elif message.text == 'Авто-кредит':
             pass
         elif message.text == 'Микрозайм':
-            pass
+
+            # Вопрос №1 - Срок кредита
+            keyboard=[]
+            for year in range(1, 8):
+                keyboard.append([KeyboardButton(text=f"{year}")])
+            kb = ReplyKeyboardMarkup(
+                keyboard=keyboard,
+                resize_keyboard=True
+            )
+            await message.answer(f'Выберите срок кредита. Для вашего варианта максимальный срок - 7 лет:\n\n(Нажмите кнопку в всплывающем меню)', reply_markup=kb)
+            await state.set_state(model_microloan.Form.M_credit_period)
         elif message.text == 'Кредит под залог':
+
+            # Вопрос №1 - Имеется ли у вас квартира или дом
             await message.answer("Имеется ли у вас квартира или дом?\n\n(Нажмите кнопку в всплывающем меню)", reply_markup=kb_yn)
             await state.set_state(model_credit_pod_zalog.Form.CPZ_apartment_or_house)
             
@@ -400,7 +413,7 @@ async def credit_type(message: Message, state: FSMContext):
 #             await state.update_data(registration=message.text)
 
 #             # Вопрос №4 - Есть ли судимость?
-#             await message.answer("Являетесь ли вы резидентом РФ?\n\n(Нажмите кнопку в всплывающем меню)", reply_markup=kb_yn)
+#             await message.answer("Есть ли у вас судимость?\n\n(Нажмите кнопку в всплывающем меню)", reply_markup=kb_yn)
 #             await state.set_state(Form.is_сriminal_record)
 #     except Exception as exception:
 #         logger.error(f"Ошибка при обработке сообщения {message.text}: {exception} в состоянии 'registration'")
