@@ -140,7 +140,7 @@ async def credit_type(message: Message, state: FSMContext):
             await state.set_state(model_microloan.Form.M_credit_period)
         elif message.text == 'Кредит под залог':
 
-            # Вопрос №1 - Имеется ли у вас квартира или дом
+            # Вопрос - Имеется ли у вас квартира или дом?
             await message.answer("Имеется ли у вас квартира или дом?\n\n(Нажмите кнопку в всплывающем меню)", reply_markup=kb_yn)
             await state.set_state(model_credit_pod_zalog.Form.CPZ_apartment_or_house)
             
